@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Listar Relatórios</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <hr>
+            <h2>Listar Relatórios</h2>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nutricionista Responsável</th>
+                        <th>Data</th>
+                        <th>Hora Entrada</th>
+                        <th>Hora Saída</th>
+                        <th>Operações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="relatorio : ${lista}">
+                        <td th:text="${relatorio.id}"></td>
+                        <td th:text="${relatorio.nutri_responsavel}"></td>   
+                        <td th:text="${relatorio.data}"></td>
+                        <td th:text="${relatorio.hora_Entrada}"></td>
+                        <td th:text="${relatorio.hora_Saida}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </body>
+</html>

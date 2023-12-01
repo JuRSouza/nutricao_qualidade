@@ -21,6 +21,7 @@ public class Relatorio {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
+    private String nutri_responsavel;
     private String data;
     private String hora_Entrada;
     private String hora_Saida;

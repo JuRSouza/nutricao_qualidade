@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Listar Clientes</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <hr>
+            <h2>Listar Clientes</h2>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Fantasia</th>
+                        <th>Razão Social</th>
+                        <th>CNPJ</th>
+                        <th>Categoria</th>
+                        <th>Nome Responsável Legal</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                        <th>Nome Gerente</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                        <th>Nome Subgerente</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${lista}">
+                        <td th:text="${cliente.id}"></td>
+                        <td th:text="${cliente.nome_Fantasia}"></td>   
+                        <td th:text="${cliente.razao_Social}"></td>
+                        <td th:text="${cliente.cnpj}"></td>
+                        <td th:text="${cliente.categoria}"></td>
+                        <td th:text="${cliente.nome_responsavel_legal}"></td>
+                        <td th:text="${cliente.sobrenome_responsavel_legal}"></td>
+                        <td th:text="${cliente.email_responsavel_legal}"></td>
+                        <td th:text="${cliente.telefone_responsavel_legal}"></td>
+                        <td th:text="${cliente.celular_responsavel_legal}"></td>
+                        <td th:text="${cliente.nome_gerente}"></td>
+                        <td th:text="${cliente.sobrenome_gerente}"></td>
+                        <td th:text="${cliente.email_gerente}"></td>
+                        <td th:text="${cliente.telefone_gerente}"></td>
+                        <td th:text="${cliente.celular_gerente}"></td>
+                        <td th:text="${cliente.nome_subgerente}"></td>
+                        <td th:text="${cliente.sobrenome_subgerente}"></td>
+                        <td th:text="${cliente.email_subgerente}"></td>
+                        <td th:text="${cliente.telefone_subgerente}"></td>
+                        <td th:text="${cliente.celular_subgerente}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </body>
+</html>

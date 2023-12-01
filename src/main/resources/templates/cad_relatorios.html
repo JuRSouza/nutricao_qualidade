@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cadastrar Relatório</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastrar Relatório</h1>
+        <form th:action="@{/gravar-relatorio}" th:object="${relatorio}" method="POST"> 
+            <p>Data: <input type="text" th:field="${relatorio.nutri_responsavel}" placeholder="Insira o nome" class="form-control mt-4 col-4">
+            <p>Data: <input type="date" th:field="${relatorio.data}" placeholder="Insira a data" class="form-control mt-4 col-4">
+            <p>Hora entrada: <input type="text" th:field="${relatorio.hora_Entrada}" placeholder="Insira a hora de entrada" class="form-control mt-4 col-4">  
+            <p>Hora saída: <input type="text" th:field="${relatorio.hora_Saida}" placeholder="Insira a hora de saída" class="form-control mt-4 col-4">
+            <p>Texto Relatório: <textarea th:field="${relatorio.texto_Relatorio}" placeholder="Digite o texto do relatório" class="form-control mt-4 col-4"></textarea></p>
+
+            <button type="submit" class="btn btn-info mt-4"> Cadastrar</button> 
+        </form> 
+    </body>
+</html>

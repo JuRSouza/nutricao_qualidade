@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cadastrar Cliente</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastrar Cliente</h1>
+        <form th:action="@{/gravar-cliente}" th:object="${cliente}" method="POST"> 
+            <p>Nome Fantasia: <input type="text" th:field="${cliente.nome_Fantasia}" placeholder="Insira  o nome fantasia" class="form-control mt-4 col-4">
+            <p>Razão Social: <input type="text" th:field="${cliente.razao_Social}" placeholder="Insira a razão social" class="form-control mt-4 col-4">  
+            <p>CNPJ: <input type="text" th:field="${cliente.cnpj}" placeholder="Insira o cnpj" class="form-control mt-4 col-4">
+            <p>Categoria: <select th:field="${cliente.categoria}" class="form-control mt-4 col-4">
+                    <option value="AÇOUGUE">Açougue</option>
+                    <option value="BAR">Bar</option>
+                    <option value="HOTEL">Hotel</option>
+                    <option value="LANCHONETE">Lanchonete</option>
+                    <option value="POUSADA">Pousada</option>
+                    <option value="PADARIA">Padaria</option>
+                    <option value="RESTAURANTE">Restaurante</option>
+                    <option value="SUPERMERCADO">Supermercado</option>
+                </select>    
+            <p>Nome Responsável Legal: <input type="text" th:field="${cliente.nome_responsavel_legal}" placeholder="Insira o nome do responsável legal" class="form-control mt-4 col-4"></p>
+            <p>Sobrenome Responsável Legal: <input type="text" th:field="${cliente.sobrenome_responsavel_legal}" placeholder="Insira o email" class="form-control mt-4 col-4"></p>
+            <p>Email Responsável Legal: <input type="email" th:field="${cliente.email_responsavel_legal}" placeholder="Insira o complemento" class="form-control mt-4 col-4"></p>
+            <p>Telefone Responsável Legal: <input type="text" th:field="${cliente.telefone_responsavel_legal}" placeholder="Insira o telefone" class="form-control mt-4 col-4"></p>
+            <p>Celular Responsável Legal: <input type="text" th:field="${cliente.celular_responsavel_legal}" placeholder="Insira o celular" class="form-control mt-4 col-4"></p>
+            <p>Nome Gerente: <input type="text" th:field="${cliente.nome_gerente}" placeholder="Insira o nome" class="form-control mt-4 col-4"></p>
+            <p>Sobrenome Gerente: <input type="text" th:field="${cliente.sobrenome_gerente}" placeholder="Insira o sobrenome" class="form-control mt-4 col-4"></p>
+            <p>Email Gerente: <input type="email" th:field="${cliente.email_gerente}" placeholder="Insira o email" class="form-control mt-4 col-4"></p>
+            <p>Telefone Gerente: <input type="text" th:field="${cliente.telefone_gerente}" placeholder="Insira o telefone" class="form-control mt-4 col-4"></p>
+            <p>Celular Gerente: <input type="text" th:field="${cliente.celular_gerente}" placeholder="Insira o celular" class="form-control mt-4 col-4"></p>
+            <p>Nome Subgerente: <input type="text" th:field="${cliente.nome_subgerente}" placeholder="Insira o nome" class="form-control mt-4 col-4"></p>
+            <p>Sobrenome Subgerente: <input type="text" th:field="${cliente.sobrenome_subgerente}" placeholder="Insira o sobrenome" class="form-control mt-4 col-4"></p>
+            <p>Email Subgerente: <input type="email" th:field="${cliente.email_subgerente}" placeholder="Insira o email" class="form-control mt-4 col-4"></p>
+            <p>Telefone Subgerente: <input type="text" th:field="${cliente.telefone_subgerente}" placeholder="Insira o telefone" class="form-control mt-4 col-4"></p>
+            <p>Celular <input type="text" th:field="${cliente.celular_subgerente}" placeholder="Insira o celular" class="form-control mt-4 col-4"></p>
+            </p>
+                <button type="submit" class="btn btn-info mt-4"> Cadastrar</button> 
+        </form> 
+    </body>
+</html>
+

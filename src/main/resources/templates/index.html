@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Página Principal</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container my-2 text-center">
+            <img th:src="@{/LogoQualiNutri.png}" alt="Logo" class="mx-auto d-block">
+            <h1>QualiNutri</h1>
+            <h3>Empresa de Consultoria em Nutrição e Qualidade</h3>
+        </div>
+        <nav>
+            <a th:href = "@{/}">Início</a>
+            <div class="dropdown">
+                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cadastrar
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" th:href = "@{/cliente/cadastro-cliente}">Cadastrar Clientes</a>
+                    <a class="dropdown-item" th:href = "@{/diretoria/cadastro-diretoria}">Cadastrar Diretoria</a>
+                    <a class="dropdown-item" th:href = "@{/funcionario/cadastro-funcionario}">Cadastrar Funcionario</a>
+                    <a class="dropdown-item" th:href = "@{/relatorio/cadastro-relatorio}">Cadastrar Relatório</a>
+                    <a class="dropdown-item" th:href = "@{/usuario/cadastro-usuario}">Cadastrar Usuário</a>
+                    <a class="dropdown-item" th:href = "@{/endereco/cadastro-endereco}">Cadastrar Endereço</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Listar
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" th:href = "@{/cliente/listagem-cliente}">Listar Clientes</a>
+                    <a class="dropdown-item" th:href = "@{/diretoria/listagem-diretoria}">Listar Diretoria</a>
+                    <a class="dropdown-item" th:href = "@{/funcionario/listagemFunc}">Listar Funcionario</a>
+                    <a class="dropdown-item" th:href = "@{/relatorio/listagem-relatorios}">Listar Relatórios</a>
+                    <a class="dropdown-item" th:href = "@{/usuario/listagem-usuario}">Listar Usuarios</a>
+                    <a class="dropdown-item" th:href = "@{/endereco/listagem-endereco}">Listar Endereços</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

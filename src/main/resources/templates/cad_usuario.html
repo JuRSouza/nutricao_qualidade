@@ -7,19 +7,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Cadastrar Usuário</h1>
-        <form th:action="@{/gravar-usuario}" th:object="${usuario}" method="POST"> 
-            <p>Login: <input type="text" th:field="${usuario.login}" placeholder="Insira seu login" class="form-control mt-4 col-4"></p>
-            <p>Senha: <input type="text" th:field="${usuario.senha}" placeholder="Insira sua senha" class="form-control mt-4 col-4"></p>  
-            <p>Confirmar Senha: <input type="text" th:field="${usuario.confirmar_Senha}" placeholder="Confirme sua senha" class="form-control mt-4 col-4"></p>
-            <p>Tipo de Acesso: <select th:field="${usuario.tipoAcesso}" class="form-control mt-4 col-4">
-                    <option value="GERENTE_GERAL">Gerente Geral</option>
-                    <option value="SOCIO_ADMINISTRATIVO">Sócio Administrativo</option>
-                    <option value="NUTRICIONISTA_SUPERVISOR">Nutricionista Supervisor(a)</option>
-                    <option value="NUTRICIONISTA">Nutricionista</option>
-                </select>
-            </p>
-                <button type="submit" class="btn btn-info mt-4"> Cadastrar</button> 
-        </form> 
+        <div class="container-fluid">
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <a th:href="@{voltar-index}" class="btn btn-info mb-3 mb-3">Voltar</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <img th:src="@{/images/LogoQualiNutri.png}" alt="Logo" style="height: 5rem; width: 10rem;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-warning">Cadastrar Usuário</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <form th:action="@{/usuario/gravar-usuario}" th:object="${usuario}" method="POST"> 
+                        <p>Login: <input type="text" th:field="${usuario.login}" placeholder="Insira seu login" class="form-control mt-4 col-4"></p>
+                        <p>Senha: <input type="text" th:field="${usuario.senha}" placeholder="Insira sua senha" class="form-control mt-4 col-4"></p>  
+                        <p>Confirmar Senha: <input type="text" th:field="${usuario.confirmar_Senha}" placeholder="Confirme sua senha" class="form-control mt-4 col-4"></p>
+                        <p>Tipo de Acesso: <select th:field="${usuario.tipoAcesso}" class="form-control mt-4 col-4">
+                                <option th:each="tipo : ${T(com.sistema.nutricao_qualidade.model.TipoAcesso).values()}" th:value="${tipo}" th:text="${#strings.capitalize(tipo.name())}">   
+                                </option>
+                            </select>
+                        </p>
+                        <button type="submit" class="btn btn-warning mt-4"> Cadastrar</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>

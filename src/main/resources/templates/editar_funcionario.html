@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Cadastrar Funcionário</title>
+        <title>Editar Funcionário</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="text-warning">Cadastrar Funcionário</h1>
+                    <h1 class="text-warning">Editar Funcionário</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -38,7 +38,10 @@
                         <p>ID do usuário: <input type="text" th:field="${funcionario.usuarioId}" placeholder="Insira o ID do Usuário" class="form-control mt-4 col-4"></p>
                         <p>ID do endereço:<input type="text" th:field="${funcionario.enderecoId}" placeholder="Insira o ID do Endereço" class="form-control mt-4 col-4"></p>
 
-                        <button type="submit" class="btn btn-warning mt-4"> Cadastrar</button> 
+                        <input type="hidden" th:field="*{id}">
+                        <p>
+                            <input type="submit" value="Editar" class="btn btn-secondary" />
+                        </p>
                     </form> 
                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

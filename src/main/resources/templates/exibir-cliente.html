@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>exibir Cliente</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 class="text-warning">Exibir Cliente</h1>
+        <p>ID:<span th:text = "${cliente.id}"></span></p>
+        <p>Nome Fantasia:<span th:text = "${cliente.nome_Fantasia}"></span></p>
+        <p>Razão Social:<span th:text = "${cliente.razao_Social}"></span></p>
+        <p>CNPJ:<span th:text = "${cliente.cnpj}"></span></p>
+        <p>Categoria:<span th:text = "${cliente.categoria}"></span></p>
+        <p>Nome Responsável Legal:<span th:text = "${cliente.nome_responsavel_legal}"></span></p>
+        <p>Sobrenome:<span th:text = "${cliente.sobrenome_responsavel_legal}"></span></p>
+        <p>Email:<span th:text = "${cliente.email_responsavel_legal}"></span></p>
+        <p>Telefone:<span th:text = "${cliente.telefone_responsavel_legal}"></span></p>
+        <p>Celular:<span th:text = "${cliente.celular_responsavel_legal}"></span></p>
+        <p>Nome Gerente:<span th:text = "${cliente.nome_gerente}"></span></p>
+        <p>Sobrenome:<span th:text = "${cliente.sobrenome_gerente}"></span></p>
+        <p>Email:<span th:text = "${cliente.email_gerente}"></span></p>
+        <p>Telefone:<span th:text = "${cliente.telefone_gerente}"></span></p>
+        <p>Celular:<span th:text = "${cliente.celular_gerente}"></span></p>
+        <p>Nome Subgerente:<span th:text = "${cliente.nome_subgerente}"></span></p>
+        <p>Sobrenome:<span th:text = "${cliente.sobrenome_subgerente}"></span></p>
+        <p>Email:<span th:text = "${cliente.email_subgerente}"></span></p>
+        <p>Telefone:<span th:text = "${cliente.telefone_subgerente}"></span></p>
+        <p>Celular:<span th:text = "${cliente.celular_subgerente}"></span></p>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

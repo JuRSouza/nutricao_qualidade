@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Cadastrar Cliente</title>
+        <title>Editar Cliente</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="@{/css/style-cadCliente.css}">
         <meta charset="UTF-8">
@@ -21,7 +21,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="text-warning">Cadastrar Cliente</h1>
+                    <h1 class="text-warning">Editar Cliente</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -57,7 +57,11 @@
                         <p>Celular <input type="text" th:field="${cliente.celular_subgerente}" placeholder="Insira o celular" class="form-control mt-4"></p>
                         <p>ID do endereço <input type="text" th:field="${cliente.enderecoId}" placeholder="Insira o ID do Endereço" class="form-control mt-4 col-4"></p>
                         </p>
-                        <button type="submit" class="btn btn-warning mt-4"> Cadastrar</button> 
+                        <input type="hidden" th:field="*{id}">
+                        <p>
+                            <input type="submit" value="Editar" class="btn btn-secondary" />
+                        </p>
+                        <!-- <a class="dropdown-item" th:href="@{/cliente/editar-cliente(id=${cliente.id})}">Editar Clientes</a>-->
                     </form> 
                 </div>
             </div>
@@ -67,4 +71,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>
+
 

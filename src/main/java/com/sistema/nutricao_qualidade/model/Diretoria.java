@@ -5,8 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +30,11 @@ public class Diretoria {
     private String telefone;
     private String celular;
     
+    @Transient
+    private Integer usuarioId;
+    
     @ManyToOne
+    @JoinColumn (name = "id_Usuario")
     private Usuario usuario;
     
 }

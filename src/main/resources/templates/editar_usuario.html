@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Cadastrar Relatório</title>
+        <title>Editar Usuário</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,25 +20,24 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="text-warning">Cadastrar Relatório</h1>
+                    <h1 class="text-warning">Editar Usuário</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-4">
-                    <form th:action="@{/relatorio/buscar-cliente-nutricionista}" method="POST">
-                        <p>ID do Cliente: <input type="text" th:field="${relatorio.clienteId}" placeholder="Insira o ID do cliente" class="form-control mt-4 col-4"></p>
-                        <p>ID do Nutricionista: <input type="text" th:field="${relatorio.funcionarioId}" placeholder="Insira o ID do(a) Nutricionista" class="form-control mt-4 col-4"></p>
-                        <button type="submit" class="btn btn-primary mt-4">Buscar Nomes</button></form>
-                    <p>Nome do Cliente: <span th:text="${clienteNome}"></span></p>
-                    <p>Nome do Nutricionista: <span th:text="${nutricionistaNome}"></span></p>
-
-                    <form th:action="@{/relatorio/gravar-relatorio}" th:object="${relatorio}" method="POST"> 
-                        <p>Data: <input type="date" th:field="${relatorio.data}" placeholder="Insira a data" class="form-control mt-4 col-4">
-                        <p>Hora entrada: <input type="text" th:field="${relatorio.hora_Entrada}" placeholder="Insira a hora de entrada (HH:mm)" class="form-control mt-4 col-4">  
-                        <p>Hora saída: <input type="text" th:field="${relatorio.hora_Saida}" placeholder="Insira a hora de saída (HH:mm)" class="form-control mt-4 col-4">
-                        <p>Texto Relatório: <textarea th:field="${relatorio.texto_Relatorio}" placeholder="Digite o texto do relatório" class="form-control mt-4 col-4"></textarea></p>
-
-                        <button type="submit" class="btn btn-warning mt-4"> Cadastrar</button> 
+                    <form th:action="@{/usuario/gravar-usuario}" th:object="${usuario}" method="POST"> 
+                        <p>Login: <input type="text" th:field="${usuario.login}" placeholder="Insira seu login" class="form-control mt-4 col-4"></p>
+                        <p>Senha: <input type="text" th:field="${usuario.senha}" placeholder="Insira sua senha" class="form-control mt-4 col-4"></p>  
+                        <p>Confirmar Senha: <input type="text" th:field="${usuario.confirmar_Senha}" placeholder="Confirme sua senha" class="form-control mt-4 col-4"></p>
+                        <p>Tipo de Acesso: <select th:field="${usuario.tipoAcesso}" class="form-control mt-4 col-4">
+                                <option th:each="tipo : ${T(com.sistema.nutricao_qualidade.model.TipoAcesso).values()}" th:value="${tipo}" th:text="${#strings.capitalize(tipo.name())}">   
+                                </option>
+                            </select>
+                        </p>
+                        <input type="hidden" th:field="*{id}">
+                        <p>
+                            <input type="submit" value="Editar" class="btn btn-secondary" />
+                        </p>
                     </form>
                 </div>
             </div>
@@ -48,3 +47,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>
+

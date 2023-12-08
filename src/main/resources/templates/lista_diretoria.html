@@ -7,32 +7,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="container">
-            <hr>
-            <h2>Listar Diretoria</h2>
-            <table border="1" class="table table-striped table-responsive-md">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Celular</th>
-                        <th>Operações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="diretoria : ${lista}">
-                        <td th:text="${diretoria.id}"></td>
-                        <td th:text="${diretoria.nome}"></td>   
-                        <td th:text="${diretoria.sobrenome}"></td>
-                        <td th:text="${diretoria.email}"></td>
-                        <td th:text="${diretoria.telefone}"></td>
-                        <td th:text="${diretoria.celular}"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container-fluid">
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <a th:href="@{voltar-index}" class="btn btn-info mb-3 mb-3">Voltar</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <img th:src="@{/images/LogoQualiNutri.png}" alt="Logo" style="height: 5rem; width: 10rem;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-warning">Listar Diretoria</h1>
+                </div>
+            </div>
 
+            <div class="col-4">
+                <table border="1" class="table table-striped table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Celular</th>
+                            <th>ID do usuário</th>
+                            <th>Operações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="diretoria : ${lista}">
+                            <td th:text="${diretoria.id}"></td>
+                            <td th:text="${diretoria.nome}"></td>   
+                            <td th:text="${diretoria.sobrenome}"></td>
+                            <td th:text="${diretoria.email}"></td>
+                            <td th:text="${diretoria.telefone}"></td>
+                            <td th:text="${diretoria.celular}"></td>
+                            <td th:text="${diretoria.usuario}"></td>
+
+                            <td>
+                                <!-- <a th:href="@{'/exibir?id=' + ${cliente.id}}" class="btn btn-info mb-3 mb-3">Detalhes do cliente</a> -->
+                                <a th:href="@{'/diretoria/editar-diretoria?id=' + ${diretoria.id}}" class="btn btn-primary mb-3 mb-3">Atualizar</a>
+                                <a th:href="@{'/diretoria/deletar-diretoria?id=' + ${diretoria.id}}" class="btn btn-danger mb-3 mb-3">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
 </html>

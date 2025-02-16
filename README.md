@@ -49,7 +49,7 @@ Para garantir a qualidade do sistema, foi elaborado um **plano de testes**, vali
 
 1️⃣ **Clone este repositório:**  
 ```bash
-git clone https://github.com/seu-usuario/nutricao_qualidade.git
+git clone https://github.com/JuRSouza/nutricao_qualidade.git
 ```
 
 2️⃣ **Abra o projeto no NetBeans**
@@ -58,7 +58,4 @@ git clone https://github.com/seu-usuario/nutricao_qualidade.git
 
 4️⃣ **Compile e execute o projeto no servidor local** (Tomcat/GlassFish)
 
-5️⃣ **Acesse via navegador:**  
-   ```
-http://localhost:8080/nutricao_qualidade
-   ```
+

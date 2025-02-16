@@ -43,7 +43,7 @@ Para garantir a qualidade do sistema, foi elaborado um **plano de testes**, vali
 - **Testes de conexão com o banco de dados**
 - **Correções de possíveis falhas identificadas**
 
-📎 **Acesse o plano de testes completo:** [Plano_de_Testes.pdf](caminho_para_o_arquivo)
+📎 **Acesse o plano de testes completo:** [Plano_de_Testes.pdf](https://github.com/JuRSouza/nutricao_qualidade/blob/main/Plano%20de%20testes%20-%20PI.pdf)
 
 ## 📌 **Como Executar o Projeto**
 
